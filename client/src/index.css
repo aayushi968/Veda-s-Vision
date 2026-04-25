@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(216, 169, 58, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 20%, rgba(79, 111, 82, 0.12), transparent 40%),
+    linear-gradient(180deg, #f7f1e3 0%, #fcfbf6 45%, #eef3e6 100%);
+  color: #2f3a2f;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  transition: all 0.2s ease;
+}
+
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(79, 111, 82, 0.14);
+}
+
+@keyframes leafFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(6deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.leaf-float {
+  animation: leafFloat 4s ease-in-out infinite;
+}
+
+.leaf-float-delayed {
+  animation: leafFloat 5.2s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes toastSlide {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.toast-slide {
+  animation: toastSlide 0.25s ease-out;
+}
